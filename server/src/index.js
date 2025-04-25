@@ -43,3 +43,5 @@ app.get("/all-pdf", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`listening at ${PORT}`);
 });
+
+module.exports = app;
