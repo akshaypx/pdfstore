@@ -1,10 +1,18 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const cors = require("cors");
 const { getFilesFromFolder, fileToBytes } = require("./utils/utils");
 const { PDFDocument } = require("pdf-lib");
 
 const app = express();
+
+const corsOptions = {
+  origin: "https://mypdfstore.vercel.app/",
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 const PORT = 8000;
 const BASE_PATH = "C:/Projects/pdfreader/server/src/files";
